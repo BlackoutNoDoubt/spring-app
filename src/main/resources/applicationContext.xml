@@ -11,37 +11,37 @@
 
     <context:component-scan base-package="com.blackout.spring"/>
 
-<!--    <bean id="musicBeanOne"-->
-<!--          class="com.blackout.spring.ClassicalMusic"-->
-<!--          init-method="init"-->
-<!--          destroy-method="destroy"-->
-<!--          factory-method="getClassicalMusic">-->
-<!--    </bean>-->
+    <bean id="musicBeanOne"
+          class="com.blackout.spring.ClassicalMusic"
+          init-method="init"
+          destroy-method="destroy"
+          factory-method="getClassicalMusic">
+    </bean>
 
-<!--        <bean id="musicBeanTwo"-->
-<!--              class="com.blackout.spring.AlternativeRockMusic">-->
-<!--        </bean>-->
+        <bean id="musicBeanTwo"
+              class="com.blackout.spring.AlternativeRockMusic">
+        </bean>
 
-<!--    <bean id="musicBeanThree"-->
-<!--          class="com.blackout.spring.IndieMusic">-->
-<!--    </bean>-->
+    <bean id="musicBeanThree"
+          class="com.blackout.spring.IndieMusic">
+    </bean>
 
-<!--    <bean id="musicPlayer"-->
-<!--          class="com.blackout.spring.MusicPlayer"-->
-<!--          scope="prototype">-->
-<!--        <property name="music" ref="musicBeanOne"/>-->
-<!--        -->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <bean id="musicPlayer"
+          class="com.blackout.spring.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="musicBeanOne"/>
 
-<!--        <property name="musicList">-->
-<!--            <list>-->
-<!--                <ref bean="musicBeanOne"/>-->
-<!--                <ref bean="musicBeanTwo"/>-->
-<!--                <ref bean="musicBeanThree"/>-->
-<!--            </list>-->
-<!--        </property>-->
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
 
-<!--    </bean>-->
+        <property name="musicList">
+            <list>
+                <ref bean="musicBeanOne"/>
+                <ref bean="musicBeanTwo"/>
+                <ref bean="musicBeanThree"/>
+            </list>
+        </property>
+
+    </bean>
 
 </beans>
