@@ -1,26 +1,23 @@
 package com.blackout.spring;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
+@Scope("prototype")
 public class ClassicalMusic implements Music {
-    private String songOne = "Ludovico Einaudi - Experience";
-    private String songTwo = "Tchaikovsky - The Nutcracker";
-    private String songThree = "Chopin - Nocturne No.1";
 
-    private List<String> classicalList = new ArrayList<>();
+    @PostConstruct
+    public void init() { System.out.println("Initialization completed."); }
 
-    {
-        classicalList.add(songOne);
-        classicalList.add(songTwo);
-        classicalList.add(songThree);
-    }
+    @PreDestroy
+    public void destroy() { System.out.println("Destruction completed"); }
 
     @Override
-    public List<String> getSongs() {
-        return classicalList;
+    public String getSong() {
+        return "Ludovico Einaudi - Experience";
     }
 }
